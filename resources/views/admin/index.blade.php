@@ -19,7 +19,7 @@
                     <div class="intro-x relative mr-3 sm:mr-6">
                         <div class="search hidden sm:block">
                             <input type="text" class="search__input form-control border-transparent" placeholder="Search...">
-                            <i data-lucide="search" class="search__icon dark:text-slate-500"></i> 
+                            <i data-lucide="search" class="search__icon dark:text-slate-500"></i>
                         </div>
                         <a class="notification sm:hidden" href=""> <i data-lucide="search" class="notification__icon dark:text-slate-500"></i> </a>
                         <div class="search-result">
@@ -116,7 +116,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -129,7 +129,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Robert De Niro</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Robert De Niro</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
@@ -155,7 +155,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Russell Crowe</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Russell Crowe</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
@@ -168,7 +168,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">06:05 AM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -181,13 +181,13 @@
                     <!-- BEGIN: Account Menu -->
                     <div class="intro-x dropdown w-8 h-8">
                         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                            <img alt="Midone - HTML Admin Template" src="{{asset('dist/images/rm.jpg')}} ">
+                            <img alt="Midone - HTML Admin Template" src="{{session('propic')}} ">
                         </div>
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-primary text-white">
                                 <li class="p-2">
-                                    <div class="font-medium">Lakshan Ravi</div>
-                                    <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Admin</div>
+                                    <div class="font-medium">{{session('usernamee')}}</div>
+                                    <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">{{session('usertype')}}}</div>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider border-white/[0.08]">
@@ -232,7 +232,7 @@
                                         <div class="report-box zoom-in">
                                             <div class="box p-5">
                                                 <div class="flex">
-                                                    <i data-lucide="shopping-cart" class="report-box__icon text-primary"></i> 
+                                                    <i data-lucide="shopping-cart" class="report-box__icon text-primary"></i>
                                                     <div class="ml-auto">
                                                         <div class="report-box__indicator bg-success tooltip cursor-pointer" title="33% Higher than last month"> 33% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                                     </div>
@@ -246,7 +246,7 @@
                                         <div class="report-box zoom-in">
                                             <div class="box p-5">
                                                 <div class="flex">
-                                                    <i data-lucide="credit-card" class="report-box__icon text-pending"></i> 
+                                                    <i data-lucide="credit-card" class="report-box__icon text-pending"></i>
                                                     <div class="ml-auto">
                                                         <div class="report-box__indicator bg-danger tooltip cursor-pointer" title="2% Lower than last month"> 2% <i data-lucide="chevron-down" class="w-4 h-4 ml-0.5"></i> </div>
                                                     </div>
@@ -260,7 +260,7 @@
                                         <div class="report-box zoom-in">
                                             <div class="box p-5">
                                                 <div class="flex">
-                                                    <i data-lucide="monitor" class="report-box__icon text-warning"></i> 
+                                                    <i data-lucide="monitor" class="report-box__icon text-warning"></i>
                                                     <div class="ml-auto">
                                                         <div class="report-box__indicator bg-success tooltip cursor-pointer" title="12% Higher than last month"> 12% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                                     </div>
@@ -274,7 +274,7 @@
                                         <div class="report-box zoom-in">
                                             <div class="box p-5">
                                                 <div class="flex">
-                                                    <i data-lucide="user" class="report-box__icon text-success"></i> 
+                                                    <i data-lucide="user" class="report-box__icon text-success"></i>
                                                     <div class="ml-auto">
                                                         <div class="report-box__indicator bg-success tooltip cursor-pointer" title="22% Higher than last month"> 22% <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i> </div>
                                                     </div>
@@ -294,7 +294,7 @@
                                         Sales Report
                                     </h2>
                                     <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500">
-                                        <i data-lucide="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i> 
+                                        <i data-lucide="calendar" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
                                         <input type="text" class="datepicker form-control sm:w-56 box pl-10">
                                     </div>
                                 </div>
@@ -338,7 +338,7 @@
                                     <h2 class="text-lg font-medium truncate mr-5">
                                         Weekly Top Seller
                                     </h2>
-                                    <a href="" class="ml-auto text-primary truncate">Show More</a> 
+                                    <a href="" class="ml-auto text-primary truncate">Show More</a>
                                 </div>
                                 <div class="intro-y box p-5 mt-5">
                                     <div class="mt-3">
@@ -349,15 +349,15 @@
                                     <div class="w-52 sm:w-auto mx-auto mt-8">
                                         <div class="flex items-center">
                                             <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                            <span class="truncate">17 - 30 Years old</span> <span class="font-medium ml-auto">62%</span> 
+                                            <span class="truncate">17 - 30 Years old</span> <span class="font-medium ml-auto">62%</span>
                                         </div>
                                         <div class="flex items-center mt-4">
                                             <div class="w-2 h-2 bg-pending rounded-full mr-3"></div>
-                                            <span class="truncate">31 - 50 Years old</span> <span class="font-medium ml-auto">33%</span> 
+                                            <span class="truncate">31 - 50 Years old</span> <span class="font-medium ml-auto">33%</span>
                                         </div>
                                         <div class="flex items-center mt-4">
                                             <div class="w-2 h-2 bg-warning rounded-full mr-3"></div>
-                                            <span class="truncate">>= 50 Years old</span> <span class="font-medium ml-auto">10%</span> 
+                                            <span class="truncate">>= 50 Years old</span> <span class="font-medium ml-auto">10%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -369,7 +369,7 @@
                                     <h2 class="text-lg font-medium truncate mr-5">
                                         Sales Report
                                     </h2>
-                                    <a href="" class="ml-auto text-primary truncate">Show More</a> 
+                                    <a href="" class="ml-auto text-primary truncate">Show More</a>
                                 </div>
                                 <div class="intro-y box p-5 mt-5">
                                     <div class="mt-3">
@@ -380,15 +380,15 @@
                                     <div class="w-52 sm:w-auto mx-auto mt-8">
                                         <div class="flex items-center">
                                             <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                            <span class="truncate">17 - 30 Years old</span> <span class="font-medium ml-auto">62%</span> 
+                                            <span class="truncate">17 - 30 Years old</span> <span class="font-medium ml-auto">62%</span>
                                         </div>
                                         <div class="flex items-center mt-4">
                                             <div class="w-2 h-2 bg-pending rounded-full mr-3"></div>
-                                            <span class="truncate">31 - 50 Years old</span> <span class="font-medium ml-auto">33%</span> 
+                                            <span class="truncate">31 - 50 Years old</span> <span class="font-medium ml-auto">33%</span>
                                         </div>
                                         <div class="flex items-center mt-4">
                                             <div class="w-2 h-2 bg-warning rounded-full mr-3"></div>
-                                            <span class="truncate">>= 50 Years old</span> <span class="font-medium ml-auto">10%</span> 
+                                            <span class="truncate">>= 50 Years old</span> <span class="font-medium ml-auto">10%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -401,7 +401,7 @@
                                         Official Store
                                     </h2>
                                     <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500">
-                                        <i data-lucide="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i> 
+                                        <i data-lucide="map-pin" class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0"></i>
                                         <input type="text" class="form-control sm:w-56 box pl-10" placeholder="Filter by city">
                                     </div>
                                 </div>
@@ -467,7 +467,7 @@
                                             <div class="py-1 px-2 rounded-full text-xs bg-success text-white cursor-pointer font-medium">137 Sales</div>
                                         </div>
                                     </div>
-                                    <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a> 
+                                    <a href="" class="intro-y w-full block text-center rounded-md py-4 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a>
                                 </div>
                             </div>
                             <!-- END: Weekly Best Sellers -->
@@ -571,7 +571,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="font-medium whitespace-nowrap">Apple MacBook Pro 13</a> 
+                                                    <a href="" class="font-medium whitespace-nowrap">Apple MacBook Pro 13</a>
                                                     <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">PC &amp; Laptop</div>
                                                 </td>
                                                 <td class="text-center">123</td>
@@ -600,7 +600,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a> 
+                                                    <a href="" class="font-medium whitespace-nowrap">Nike Tanjun</a>
                                                     <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                                                 </td>
                                                 <td class="text-center">59</td>
@@ -629,7 +629,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a> 
+                                                    <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a>
                                                     <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                                                 </td>
                                                 <td class="text-center">50</td>
@@ -658,7 +658,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a> 
+                                                    <a href="" class="font-medium whitespace-nowrap">Nike Air Max 270</a>
                                                     <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">Sport &amp; Outdoor</div>
                                                 </td>
                                                 <td class="text-center">107</td>
@@ -779,7 +779,7 @@
                                                 <div class="text-danger">-$107</div>
                                             </div>
                                         </div>
-                                        <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a> 
+                                        <a href="" class="intro-x w-full block text-center rounded-md py-3 border border-dotted border-slate-400 dark:border-darkmode-300 text-slate-500">View More</a>
                                     </div>
                                 </div>
                                 <!-- END: Transactions -->
@@ -789,7 +789,7 @@
                                         <h2 class="text-lg font-medium truncate mr-5">
                                             Recent Activities
                                         </h2>
-                                        <a href="" class="ml-auto text-primary truncate">Show More</a> 
+                                        <a href="" class="ml-auto text-primary truncate">Show More</a>
                                     </div>
                                     <div class="mt-5 relative before:block before:absolute before:w-px before:h-[85%] before:bg-slate-200 before:dark:bg-darkmode-400 before:ml-5 before:mt-5">
                                         <div class="intro-x relative flex items-center mb-3">
@@ -921,9 +921,9 @@
                                         <div class="intro-x box">
                                             <div class="p-5">
                                                 <div class="flex">
-                                                    <i data-lucide="chevron-left" class="w-5 h-5 text-slate-500"></i> 
+                                                    <i data-lucide="chevron-left" class="w-5 h-5 text-slate-500"></i>
                                                     <div class="font-medium text-base mx-auto">April</div>
-                                                    <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i> 
+                                                    <i data-lucide="chevron-right" class="w-5 h-5 text-slate-500"></i>
                                                 </div>
                                                 <div class="grid grid-cols-7 gap-4 mt-5 text-center">
                                                     <div class="font-medium">Su</div>
@@ -980,15 +980,15 @@
                                             <div class="border-t border-slate-200/60 p-5">
                                                 <div class="flex items-center">
                                                     <div class="w-2 h-2 bg-pending rounded-full mr-3"></div>
-                                                    <span class="truncate">UI/UX Workshop</span> <span class="font-medium xl:ml-auto">23th</span> 
+                                                    <span class="truncate">UI/UX Workshop</span> <span class="font-medium xl:ml-auto">23th</span>
                                                 </div>
                                                 <div class="flex items-center mt-4">
                                                     <div class="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                                                    <span class="truncate">VueJs Frontend Development</span> <span class="font-medium xl:ml-auto">10th</span> 
+                                                    <span class="truncate">VueJs Frontend Development</span> <span class="font-medium xl:ml-auto">10th</span>
                                                 </div>
                                                 <div class="flex items-center mt-4">
                                                     <div class="w-2 h-2 bg-warning rounded-full mr-3"></div>
-                                                    <span class="truncate">Laravel Rest API</span> <span class="font-medium xl:ml-auto">31th</span> 
+                                                    <span class="truncate">Laravel Rest API</span> <span class="font-medium xl:ml-auto">31th</span>
                                                 </div>
                                             </div>
                                         </div>

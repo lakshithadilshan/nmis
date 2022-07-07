@@ -1,19 +1,30 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use  App\Models\RequestList;
+use Session;
 use Illuminate\Support\Facades\DB;
+
+use  App\Models\RequestList;
+
 
 
 class RequestModuleController extends Controller
 {
     function show(){
-
-        $data=RequestList::orderBy("created_at","desc")->get();
-        return view('request', compact('data')); 
+        Session::put('index', '');
+        Session::put('manage', '');
+        Session::put('employee','');
+        Session::put('request','side-menu--active');
+        Session::put('complain', '');
+        Session::put('rave', '');
+        Session::put('social','');
+        Session::put('mobile','');
+        Session::save();
+        $data = DB::table('request_lists')
+            ->where('emp_id', '=',session('emp_id') )
+            ->get();
+        return view('user.userRequest',compact('data'));
         //return view('request',$data);
-    
+
     }
 }

@@ -5,8 +5,8 @@
 
 
 <div class="content">
-    
-    
+
+
                 <!-- BEGIN: Top Bar -->
                 <div class="top-bar">
                     <!-- BEGIN: Breadcrumb -->
@@ -21,7 +21,7 @@
                     <div class="intro-x relative mr-3 sm:mr-6">
                         <div class="search hidden sm:block">
                             <input type="text" class="search__input form-control border-transparent" placeholder="Search...">
-                            <i data-lucide="search" class="search__icon dark:text-slate-500"></i> 
+                            <i data-lucide="search" class="search__icon dark:text-slate-500"></i>
                         </div>
                         <a class="notification sm:hidden" href=""> <i data-lucide="search" class="notification__icon dark:text-slate-500"></i> </a>
                         <div class="search-result">
@@ -47,7 +47,7 @@
                                         <div class="w-8 h-8 image-fit">
                                             <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/profile-6.jpg">
                                         </div>
-                                        <div class="ml-3">Lakshan Ravi</div>
+                                        <div class="ml-3">{{session('emp_id')}}</div>
                                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">ravindumohottala@gmail.com</div>
                                     </a>
                                     <a href="" class="flex items-center mt-2">
@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Al Pacino</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -144,7 +144,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Robert De Niro</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Robert De Niro</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
@@ -157,7 +157,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Russell Crowe</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Russell Crowe</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">01:10 PM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
@@ -170,7 +170,7 @@
                                     </div>
                                     <div class="ml-2 overflow-hidden">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a> 
+                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a>
                                             <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">06:05 AM</div>
                                         </div>
                                         <div class="w-full truncate text-slate-500 mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -188,8 +188,8 @@
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-primary text-white">
                                 <li class="p-2">
-                                    <div class="font-medium">Lakshan Ravi</div>
-                                    <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Admin</div>
+                                    <div class="font-medium">{{session('emp_id')}}</div>
+                                    <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">{{session('usertype')}}</div>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider border-white/[0.08]">
@@ -218,7 +218,7 @@
                     <!-- END: Account Menu -->
                 </div>
                 <!-- END: Top Bar -->
-                
+
                 <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
                     <h2 class="text-lg font-medium mr-auto">
                        Request List
@@ -229,12 +229,12 @@
                             <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
                                 <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="plus"></i> </span>
                             </button>
-                            
+
                         </div>
                     </div>
                 </div>
                 <!-- BEGIN: HTML Table Data -->
-          
+
                       <div class="intro-y box p-5 mt-5">
                     <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
                         <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
@@ -246,7 +246,7 @@
                                     <option value="remaining_stock">Admin 3</option>
                                 </select>
                             </div>
-                           
+
                             <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
                                 <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2">Emp. ID/Name</label>
                                 <input id="tabulator-html-filter-value" type="text" class="form-control sm:w-40 2xl:w-full mt-2 sm:mt-0" placeholder="Search...">
@@ -285,8 +285,8 @@
                                         <thead>
                                             <tr>
                                                 <th class="whitespace-nowrap">Request ID</th>
-                                                <th class="whitespace-nowrap">Description</th>
                                                 <th class="text-center whitespace-nowrap">Request Type</th>
+                                                <th class="whitespace-nowrap">Description</th>
                                                 <th class="text-center whitespace-nowrap">Priority</th>
                                                 <th class="text-center whitespace-nowrap">Status</th>
                                                 <th class="text-center whitespace-nowrap">Employee ID</th>
@@ -296,19 +296,19 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($data as $req )
-                                                
-                                            
+
+
                                             <tr class="intro-x">
                                                 <td class="w-40">
                                                     <div class="flex">
                                                         <div class="w-10 h-10 image-fit zoom-in">
                                                         {{$req->request_id}}
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <a href="" class="font-medium whitespace-nowrap">{{$req->req_type}}</a> 
+                                                    <a href="" class="font-medium whitespace-nowrap">{{$req->req_type}}</a>
                                                 </td>
 
                                                 <td class="text-center">{{$req->description}}</td>
@@ -318,14 +318,14 @@
                                                     <div class="flex items-center justify-center text-danger"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="user" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> {{$req->priority}} </div>
                                                 </td>
                                                 }
-                                                
+
                                                 @elseif ($req->priority == "Low") {
                                                     <td class="w-40">
                                                     <div class="flex items-center justify-center text-success"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="user" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> {{$req->priority}} </div>
                                                 </td>
-                                                } 
+                                                }
                                                 @endif
-                                                
+
                                                 <td class="w-40">
                                                     <div class="flex items-center justify-center text-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> {{$req->status}} </div>
                                                 </td>
