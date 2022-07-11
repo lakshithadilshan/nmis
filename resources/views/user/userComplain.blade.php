@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Midone Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
-    <title>Add New Post - Midone - Tailwind HTML Admin Template</title>
+    <title>UserComplain</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="dist/css/app.css" />
     <!-- END: CSS Assets-->
@@ -25,556 +25,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END: Head -->
 <body class="py-5">
 <!-- BEGIN: Mobile Menu -->
-<div class="mobile-menu md:hidden">
-    <div class="mobile-menu-bar">
-        <a href="" class="flex mr-auto">
-            <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-        </a>
-        <a href="javascript:;" id="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
-    </div>
-    <ul class="border-t border-white/[0.08] py-5 hidden">
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="home"></i> </div>
-                <div class="menu__title"> Dashboard <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="index.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 1 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-dashboard-overview-2.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 2 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-dashboard-overview-3.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 3 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-dashboard-overview-4.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 4 </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="box"></i> </div>
-                <div class="menu__title"> Menu Layout <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="index.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Side Menu </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="simple-menu-light-dashboard-overview-1.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Simple Menu </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="top-menu-light-dashboard-overview-1.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Top Menu </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="side-menu-light-inbox.html" class="menu">
-                <div class="menu__icon"> <i data-lucide="inbox"></i> </div>
-                <div class="menu__title"> Inbox </div>
-            </a>
-        </li>
-        <li>
-            <a href="side-menu-light-file-manager.html" class="menu">
-                <div class="menu__icon"> <i data-lucide="hard-drive"></i> </div>
-                <div class="menu__title"> File Manager </div>
-            </a>
-        </li>
-        <li>
-            <a href="side-menu-light-point-of-sale.html" class="menu">
-                <div class="menu__icon"> <i data-lucide="credit-card"></i> </div>
-                <div class="menu__title"> Point of Sale </div>
-            </a>
-        </li>
-        <li>
-            <a href="side-menu-light-chat.html" class="menu">
-                <div class="menu__icon"> <i data-lucide="message-square"></i> </div>
-                <div class="menu__title"> Chat </div>
-            </a>
-        </li>
-        <li>
-            <a href="side-menu-light-post.html" class="menu menu--active">
-                <div class="menu__icon"> <i data-lucide="file-text"></i> </div>
-                <div class="menu__title"> Post </div>
-            </a>
-        </li>
-        <li>
-            <a href="side-menu-light-calendar.html" class="menu">
-                <div class="menu__icon"> <i data-lucide="calendar"></i> </div>
-                <div class="menu__title"> Calendar </div>
-            </a>
-        </li>
-        <li class="menu__devider my-6"></li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="edit"></i> </div>
-                <div class="menu__title"> Crud <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="side-menu-light-crud-data-list.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Data List </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-crud-form.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Form </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="users"></i> </div>
-                <div class="menu__title"> Users <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="side-menu-light-users-layout-1.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Layout 1 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-users-layout-2.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Layout 2 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-users-layout-3.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Layout 3 </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="trello"></i> </div>
-                <div class="menu__title"> Profile <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="side-menu-light-profile-overview-1.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 1 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-profile-overview-2.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 2 </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-profile-overview-3.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overview 3 </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="layout"></i> </div>
-                <div class="menu__title"> Pages <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Wizards <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-wizard-layout-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 1</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-wizard-layout-2.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 2</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-wizard-layout-3.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 3</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Blog <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-blog-layout-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 1</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-blog-layout-2.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 2</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-blog-layout-3.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 3</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Pricing <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-pricing-layout-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 1</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-pricing-layout-2.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 2</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Invoice <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-invoice-layout-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 1</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-invoice-layout-2.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 2</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> FAQ <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-faq-layout-1.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 1</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-faq-layout-2.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 2</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-faq-layout-3.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Layout 3</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="login-light-login.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Login </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="login-light-register.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Register </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="main-light-error-page.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Error Page </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-update-profile.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Update profile </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-change-password.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Change Password </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="menu__devider my-6"></li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="inbox"></i> </div>
-                <div class="menu__title"> Components <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Table <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-regular-table.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Regular Table</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-tabulator.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Tabulator</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Overlay <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-modal.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Modal</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-slide-over.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Slide Over</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-notification.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Notification</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="side-menu-light-tab.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Tab </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-accordion.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Accordion </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-button.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Button </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-alert.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Alert </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-progress-bar.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Progress Bar </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-tooltip.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Tooltip </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-dropdown.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Dropdown </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-typography.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Typography </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-icon.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Icon </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-loading-icon.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Loading Icon </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="sidebar"></i> </div>
-                <div class="menu__title"> Forms <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="side-menu-light-regular-form.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Regular Form </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-datepicker.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Datepicker </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-tom-select.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Tom Select </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-file-upload.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> File Upload </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Wysiwyg Editor <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-                    </a>
-                    <ul class="">
-                        <li>
-                            <a href="side-menu-light-wysiwyg-editor-classic.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Classic</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-wysiwyg-editor-inline.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Inline</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-wysiwyg-editor-balloon.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Balloon</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-wysiwyg-editor-balloon-block.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Balloon Block</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="side-menu-light-wysiwyg-editor-document.html" class="menu">
-                                <div class="menu__icon"> <i data-lucide="zap"></i> </div>
-                                <div class="menu__title">Document</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="side-menu-light-validation.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Validation </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:;" class="menu">
-                <div class="menu__icon"> <i data-lucide="hard-drive"></i> </div>
-                <div class="menu__title"> Widgets <i data-lucide="chevron-down" class="menu__sub-icon "></i> </div>
-            </a>
-            <ul class="">
-                <li>
-                    <a href="side-menu-light-chart.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Chart </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-slider.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Slider </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="side-menu-light-image-zoom.html" class="menu">
-                        <div class="menu__icon"> <i data-lucide="activity"></i> </div>
-                        <div class="menu__title"> Image Zoom </div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
 <!-- END: Mobile Menu -->
 <div class="flex">
     <!-- BEGIN: Side Menu -->
@@ -747,33 +197,40 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <div class="intro-y grid grid-cols-12 gap-6 mt-5">
             <!-- BEGIN: Blog Layout -->
-            <div class="intro-y col-span-12 md:col-span-6 box">
+            <div class="intro-y col-span-12 md:col-span-7 box">
 
 
                 <div class="intro-y box mt-3" >
 
                     <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
-                        <h2 class="font-medium text-base mr-auto">
-                           Complain Form
-                        </h2>
+
+                        <ul class="nav nav-link-tabs flex-col sm:flex-row justify-center lg:justify-start text-center" role="tablist" >
+                            <li id="profile-tab" class="nav-item" role="presentation">
+                                <a type="button" id="form" href="javascript:;" class="nav-link py-4 flex items-center active" data-tw-target="#profile" aria-controls="profile"
+                                   aria-selected="true" role="tab"  >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-diff" viewBox="0 0 16 16">
+                                        <path d="M8 5a.5.5 0 0 1 .5.5V7H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V8H6a.5.5 0 0 1 0-1h1.5V5.5A.5.5 0 0 1 8 5zm-2.5 6.5A.5.5 0 0 1 6 11h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
+                                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                                    </svg>
+                                    Complain Form </a>
+                            </li>
+                            <li id="profile-tab" class="nav-item" role="presentation">
+                                <a type="button" id="recentcomplain" href="javascript:;" class="nav-link py-4 flex items-center " data-tw-target="#profile"
+                                   aria-controls="profile" aria-selected="true" role="tab" > <i class="w-4 h-4 mr-2" data-lucide="user"></i> Recent Complains </a>
+                            </li>
+
+                        </ul>
+
 
                     </div>
-                    <div id="horizontal-form" class="p-3">
+                    <div  class="p-3 " id="formm">
                         <div class="preview">
-
-
-
-                            <form method="get" action="storeComplain">
+                            <form method="post" action="storeComplain" enctype="multipart/form-data">
                                 @csrf
-
-
                                 <div class="form-inline mt-5">
                                     <label for="horizontal-form-1" class="form-label sm:w-20">Description</label>
                                     <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                                     <br>
-
-
-
                                 </div>
                                 <div class="mt-3">
 
@@ -788,68 +245,70 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </div>
                                     </div>
                                     <div class="px-4 pb-4 flex items-center cursor-pointer relative">
-
                                     </div>
                                 </div>
-
-
-
-
-
-                                <div class="sm:ml-20 sm:pl-5 mt-5">
-                                    <input type="submit" class="btn btn-primary shadow-md mr-2"  >
-                                </div>
+                                <input type="submit" class="btn btn-primary shadow-md mr-2"  >
                         </div>
                         </form>
+                    </div>
+                    <div  class="p-3 hidden" id="recentcomplainform">
+                        <table class="table table-report sm:mt-2">
+                            <thead>
+                            <tr>
+                                <th class="text-center whitespace-nowrap">Complain ID</th>
+                                <th class="text-center whitespace-nowrap">Description</th>
+                                <th class=" whitespace-nowrap">Picture</th>
+                                <th class="text-center whitespace-nowrap"></th>
 
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($data as $req )
+                                <tr class="text-center whitespace-nowrap">
+                                    <td >{{$req->complain_id}}</td>
+                                    <td>
+                                        <a href="" class="">{{$req->description}}</a>
+                                    </td>
+                                    <td>
+                                        <div class="intro-x w-8 h-8 image-fit ">
+                                            <img alt="" data-action="zoom" class="rounded-full border border-white zoom-in tooltip" src="{{$req->picture}}" title="">
+                                        </div>
+                                    </td>
+                                    <td class="table-report__action w-56">
+{{--                                        <div class="flex justify-center items-center">--}}
+{{--                                            <a class="flex items-center mr-3" href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit </a>--}}
+{{--                                            <a class="flex items-center text-danger" href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Delete </a>--}}
+{{--                                        </div>--}}
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
 
                     </div>
 
+                    <script>
+                        document.getElementById("form").addEventListener("click",
+                            function (){
+                            document.querySelector("#recentcomplainform").style.display="none";
+                            document.querySelector("#formm").style.display = "block";
+                            });
+                        document.getElementById("recentcomplain").addEventListener("click",
+                            function (){
+                            document.querySelector("#formm").style.display="none";
+                            document.querySelector("#recentcomplainform").style.display="block";
+                            });
 
 
+
+                    </script>
                 </div>
             </div>
-
-            <div class="intro-y col-span-12 md:col-span-6 box">
-
-
-
-            </div>
-
         </div>
 
 
         <!-- END: Blog Layout -->
         <!-- BEGIN: Pagiantion -->
-        <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-            <nav class="w-full sm:w-auto sm:mr-auto">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-left"></i> </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-left"></i> </a>
-                    </li>
-                    <li class="page-item"> <a class="page-link" href="#">...</a> </li>
-                    <li class="page-item"> <a class="page-link" href="#">1</a> </li>
-                    <li class="page-item active"> <a class="page-link" href="#">2</a> </li>
-                    <li class="page-item"> <a class="page-link" href="#">3</a> </li>
-                    <li class="page-item"> <a class="page-link" href="#">...</a> </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-right"></i> </a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-right"></i> </a>
-                    </li>
-                </ul>
-            </nav>
-            <select class="w-20 form-select box mt-3 sm:mt-0">
-                <option>10</option>
-                <option>25</option>
-                <option>35</option>
-                <option>50</option>
-            </select>
-        </div>
         <!-- END: Pagiantion -->
     </div>
 </div>

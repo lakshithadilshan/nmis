@@ -16,6 +16,7 @@ class AlluserController extends Controller
 {
     function login(Request $req){
 
+
         $emp_id = $req->emp_id;
         $pass = $req->password;
         // checking from database (pull from db)
@@ -110,7 +111,7 @@ class AlluserController extends Controller
             return view('welcome');
 
 
-        }elseif($pw == $pass && $usertype == 'normal'){
+        }elseif($pw == $pass && $usertype == 'Genaral'){
 //            genaral user
 //            ----------sidebar---------------------
             Session::put('index', '');
@@ -131,7 +132,9 @@ class AlluserController extends Controller
             $data = DB::table('request_lists')
                 ->where('emp_id', '=',$emp_id )
                 ->get();
-            return view('user.userRequest',compact('data'));
+            return Redirect()->route('UserRequestmodule');
+
+//            return view('user.userRequest',compact('data'));
 //            $data=RequestList::orderBy("created_at","asc")->get();
 
 
@@ -147,6 +150,10 @@ class AlluserController extends Controller
         session()->pull('emp_id');
         session()->pull('usertype');
         Session::flush();
-        return view ('login');
+        return Redirect()->route('/');
+
+    }
+    function loginform(){
+        return view('login');
     }
 }

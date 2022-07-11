@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\RequestType;
+use App\Models\UserType;
 use Session;
 use Illuminate\Support\Facades\DB;
 
@@ -20,11 +22,43 @@ class RequestModuleController extends Controller
         Session::put('social','');
         Session::put('mobile','');
         Session::save();
-        $data = DB::table('request_lists')
-            ->where('emp_id', '=',session('emp_id') )
-            ->get();
-        return view('user.userRequest',compact('data'));
-        //return view('request',$data);
+        if(session('emp_id')){
+            $data = DB::table('request_lists')
+                ->where('emp_id', '=',session('emp_id') )
+                ->get();
+            $usertypesfresh=UserType::orderBy("created_at","desc")->get();
+
+
+            return view('request',compact('data','usertypesfresh'));
+
+        }else{
+            return back();
+        }
+
 
     }
+    function approverequest($id){
+        if(session('emp_id')){
+            $affected = DB::table('request_lists')
+                ->where('request_id', $id)
+                ->update(['status' => 'approved']);
+            return back();
+        }else{
+            return back();
+        }
+
+    }
+    function rejectrequest($id){
+        if(session('emp_id')){
+            $affected = DB::table('request_lists')
+                ->where('request_id', $id)
+                ->update(['status' => 'Rejected']);
+            return back();
+        }else{
+            return back();
+        }
+
+    }
+
+
 }

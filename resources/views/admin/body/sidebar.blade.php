@@ -87,7 +87,7 @@
                     <li>
                         <a href="Requestmodule" class="side-menu {{session('request')}}">
                             <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>
-                            <div class="side-menu__title"> Request Module </div>
+                            <div class="side-menu__title"> Request  </div>
                         </a>
 
                     </li>
@@ -98,7 +98,7 @@
                     <li>
                         <a href="Complaintmodule" class="side-menu {{session('complain')}}">
                             <div class="side-menu__icon"> <i data-lucide="frown"></i> </div>
-                            <div class="side-menu__title"> Complaint Module </div>
+                            <div class="side-menu__title"> Complain </div>
                         </a>
 
                     </li>
@@ -109,7 +109,7 @@
                     <li>
                         <a href="ravemodule" class="side-menu {{session('rave')}}">
                             <div class="side-menu__icon"> <i data-lucide="star"></i> </div>
-                            <div class="side-menu__title"> Rave Module </div>
+                            <div class="side-menu__title"> Rave  </div>
                         </a>
 
                     </li>

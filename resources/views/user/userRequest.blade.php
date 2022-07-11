@@ -17,7 +17,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <meta name="description" content="Midone admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Midone Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
-    <title>Add New Post - Midone - Tailwind HTML Admin Template</title>
+    <title>Request</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="dist/css/app.css" />
     <!-- END: CSS Assets-->
@@ -745,33 +745,64 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
             </div>
         </div>
+        <div class="mt-6 lg:mt-0 flex-1 px-5 border-l border-r border-slate-200/60 dark:border-darkmode-400 border-t lg:border-t-0 pt-5 lg:pt-0">
+
         <div class="intro-y grid grid-cols-12 gap-6 mt-5">
-            <!-- BEGIN: Blog Layout -->
-            <div class="intro-y col-span-12 md:col-span-6 box">
+
+            <ul class="nav nav-link-tabs flex-col sm:flex-row justify-center lg:justify-start text-center" role="tablist" >
+                <li id="profile-tab" class="nav-item" role="presentation">
+                    <a type="button" id="showgallery" href="javascript:;" class="nav-link py-4 flex items-center active" data-tw-target="#profile" aria-controls="profile" aria-selected="true" role="tab" > <i class="w-4 h-4 mr-2" data-lucide="user"></i> Request Form </a>
+                </li>
+                <li id="profile-tab" class="nav-item" role="presentation">
+                    <a type="button" id="showupdateform" href="javascript:;" class="nav-link py-4 flex items-center " data-tw-target="#profile" aria-controls="profile" aria-selected="true" role="tab" > <i class="w-4 h-4 mr-2" data-lucide="user"></i> Recent Request </a>
+                </li>
+
+            </ul>
+        </div>
+            <script>
+                document.getElementById("showupdateform").addEventListener("click",
+                    function(){
+
+                        document.querySelector("#gallery").style.display = "none";
+                        document.querySelector("#settings").style.display = "block";
+
+                    });
+                document.getElementById("showgallery").addEventListener("click",
+                    function(){
+
+                        document.querySelector("#gallery").style.display = "block";
+                        document.querySelector("#settings").style.display = "none";
+
+                    });
+            </script>
 
 
-                <div class="intro-y box mt-3" >
-
-                    <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
-                        <h2 class="font-medium text-base mr-auto">
-                            Add Request Form
-                        </h2>
-
-                    </div>
-                    <div id="horizontal-form" class="p-3">
-                        <div class="preview">
+            </div>
+        <div id="gallery" class="intro-y col-span-8 md:col-span-3 box ">
 
 
+            <div class="intro-y box mt-3 " >
 
-                            <form method="POST" action="storeRequest">
-                                @csrf
+                <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 ">
+                    <h2 class="font-medium text-base mr-auto">
+                        Add Request Form
+                    </h2>
+
+                </div>
+                <div id="horizontal-form" class="p-3">
+                    <div class="preview">
+
+
+
+                        <form method="POST" action="storeRequest">
+                            @csrf
 
                             <div class="form-inline mt-5">
                                 <label for="horizontal-form-2" class="form-label sm:w-20"> Type</label>
                                 <select name="reqtype" id="usertype" class="form-select mt-2 sm:mr-2" aria-label="Default select example">
-                                    <option>Leave</option>
-                                    <option>Furniture</option>
-                                    <option>Transport</option>
+                                    @foreach($requesttypesfresh as $ut)
+                                        <option value="{{$ut->request_type}}">{{$ut->request_type}}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -795,8 +826,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="sm:ml-20 sm:pl-5 mt-5">
                                 <input type="submit" class="btn btn-primary shadow-md mr-2"  >
                             </div>
-                        </div>
-                        </form>
+                    </div>
+                    </form>
 
 
                 </div>
@@ -804,122 +835,91 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
             </div>
-            </div>
+        </div>
+        <div id="settings" class="intro-y col-span-12 md:col-span-6 box hidden">
 
-            <div class="intro-y col-span-12 md:col-span-6 box">
+            <table class="table table-report sm:mt-2 ">
+                <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
+                    <h2 class="font-medium text-base mr-auto">
+                        Recent Requests
+                    </h2>
 
-                <table class="table table-report sm:mt-2">
-                    <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
-                        <h2 class="font-medium text-base mr-auto">
-                            Recent Requests
-                        </h2>
+                </div>
+                <thead>
+                <tr>
+                    <th class="whitespace-nowrap">Type</th>
+                    <th class="whitespace-nowrap">Description</th>
+                    <th class="text-center whitespace-nowrap">Priority</th>
+                    <th class="text-center whitespace-nowrap">Status</th>
+                    <th class="text-center whitespace-nowrap"></th>
+                    <th class="text-center whitespace-nowrap"></th>
 
-                    </div>
-                    <thead>
-                    <tr>
-                        <th class="whitespace-nowrap">Type</th>
-                        <th class="whitespace-nowrap">Description</th>
-                        <th class="text-center whitespace-nowrap">Priority</th>
-                        <th class="text-center whitespace-nowrap">Status</th>
-
-                        <th class="text-center whitespace-nowrap"></th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach ($data as $req )
+                </tr>
+                </thead>
+                <tbody>
+                @foreach ($data as $req )
 
 
-                        <tr class="intro-x">
-                            <td class="w-40">
-                                <div class="flex">
-                                    <div class="w-10 h-10 image-fit zoom-in">
-                                        {{$req->req_type}}
-                                    </div>
-
+                    <tr class="intro-x">
+                        <td class="w-40">
+                            <div class="flex">
+                                <div class="w-10 h-10 image-fit zoom-in">
+                                    {{$req->req_type}}
                                 </div>
-                            </td>
-                            <td>
-                                <a href="" class="font-medium whitespace-nowrap">{{$req->description}}</a>
-                            </td>
 
-                            <td class="text-center">{{$req->priority}}</td>
-
-
-
-                            <td class="w-40">
-                                <div class="flex items-center justify-center text-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> {{$req->status}} </div>
-                            </td>
-
-
+                            </div>
+                        </td>
+                        <td>
+                            <form method="post" action="edit_request_desc">
+                                @csrf
+                            <a id="desc{{$req->request_id}}" href="" class="font-medium whitespace-nowrap">{{$req->description}}</a>
+                            <input type="text" name="description" class="form-control-rounded hidden" placeholder="{{$req->description}}" id="txtpass{{$req->request_id}}">
+                            <input type="hidden" value="{{$req->request_id}}" name="id">
+                                <input type="submit" class="hidden">
+                            </form>
+                        </td>
+                        <td class="text-center">{{$req->priority}}</td>
+                        <td class="w-40">
+                            <div class="flex items-center justify-center text-primary"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> {{$req->status}} </div>
+                        </td>
+                        @if($req->status == 'Pending')
+                        <td class="table-report__action w-56">
+                            <div class="flex justify-center items-center">
+                                <a title="click to edit" type="button" id="click{{$req->request_id}}" class="flex items-center mr-3" > <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit </a>
+                            </div>
+                            <script>
+                                document.getElementById("click{{$req->request_id}}").addEventListener("click",
+                                    function (){
+                                        document.querySelector("#desc{{$req->request_id}}").style.display="none";
+                                        document.querySelector("#txtpass{{$req->request_id}}").style.display = "block";
+                                    });
+                            </script>
+                        </td>
+                        @endif
+                        @if($req->status == 'Pending')
                             <td class="table-report__action w-56">
                                 <div class="flex justify-center items-center">
-                                    <a class="flex items-center mr-3" href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Edit </a>
-                                    <a class="flex items-center text-danger" href="{{ url('cancelrequest/' . $req->request_id) }}> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Cancel </a>
+                                    <a class="flex items-center text-danger" href="{{ url('cancelrequest/' . $req->request_id) }}"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Cancel </a>
                                 </div>
+
                             </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
+                        @endif
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
 
-            </div>
+        </div>
 
-            </div>
-
-
-            <!-- END: Blog Layout -->
-            <!-- BEGIN: Pagiantion -->
-            <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                <nav class="w-full sm:w-auto sm:mr-auto">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-left"></i> </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-left"></i> </a>
-                        </li>
-                        <li class="page-item"> <a class="page-link" href="#">...</a> </li>
-                        <li class="page-item"> <a class="page-link" href="#">1</a> </li>
-                        <li class="page-item active"> <a class="page-link" href="#">2</a> </li>
-                        <li class="page-item"> <a class="page-link" href="#">3</a> </li>
-                        <li class="page-item"> <a class="page-link" href="#">...</a> </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevron-right"></i> </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"> <i class="w-4 h-4" data-lucide="chevrons-right"></i> </a>
-                        </li>
-                    </ul>
-                </nav>
-                <select class="w-20 form-select box mt-3 sm:mt-0">
-                    <option>10</option>
-                    <option>25</option>
-                    <option>35</option>
-                    <option>50</option>
-                </select>
-            </div>
-            <!-- END: Pagiantion -->
         </div>
     </div>
-    <!-- END: Content -->
-
-
     </div>
-    <!-- END: Post Content -->
-    <!-- BEGIN: Post Info -->
 
-    <!-- END: Post Info -->
 </div>
 </div>
 <!-- END: Content -->
 </div>
-<!-- BEGIN: Dark Mode Switcher-->
-<div data-url="side-menu-dark-post.html" class="dark-mode-switcher cursor-pointer shadow-md fixed bottom-0 right-0 box border rounded-full w-40 h-12 flex items-center justify-center z-50 mb-10 mr-10">
-    <div class="mr-4 text-slate-600 dark:text-slate-200">Dark Mode</div>
-    <div class="dark-mode-switcher__toggle border"></div>
-</div>
-<!-- END: Dark Mode Switcher-->
+<
 
 <!-- BEGIN: JS Assets-->
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
