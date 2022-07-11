@@ -5,8 +5,9 @@
                 </a>
                 <div class="side-nav__devider my-6"></div>
                 <ul>
+
                     <li>
-                        <a href="javascript:;.html" class="side-menu {{session('index')}}">
+                        <a href="{{ route('dashboard')}}" class="side-menu {{session('index')}}">
                             <div class="side-menu__icon"> <i data-lucide="home"></i> </div>
                             <div class="side-menu__title">
                                 Dashboard
@@ -15,77 +16,43 @@
                         </a>
 
                     </li>
-                        <li>
-                        <li class="side-nav__devider my-6"></li>
+                    <li>
+                    <li class="side-nav__devider my-6"></li>
                     </li>
 
 
                     <li>
-                        <a href="javascript:;" class="side-menu {{session('manage')}}">
+                        <a href="{{ route('manageuser.view')}}" class="side-menu {{session('manage')}}">
                             <div class="side-menu__icon"> <i data-lucide="users"></i> </div>
                             <div class="side-menu__title">
                                 Manage User
-                                <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+
                             </div>
                         </a>
-                        <ul class="">
-                            <li>
-                                <a href="" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-lucide="user"></i> </div>
-                                    <div class="side-menu__title"> View users </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-lucide="user-plus"></i> </div>
-                                    <div class="side-menu__title"> Add User </div>
-                                </a>
-                            </li>
 
-                        </ul>
                     </li>
                     <li>
-                        <li class="side-nav__devider my-6"></li>
+                    <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                         <a href="javascript:;" class="side-menu {{session('employee')}}">
+                        <a href="{{ route('employeeModule.view') }}" class="side-menu {{session('employee')}}">
                             <div class="side-menu__icon"> <i data-lucide="command"></i> </div>
                             <div class="side-menu__title">
-                                Employee Module
-                                <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
+                                Manage Employee
+
                             </div>
                         </a>
 
-                        <ul class="">
-                            <li>
-                                <a href="index.html" class="side-menu ">
-                                    <div class="side-menu__icon"> <i data-lucide="calendar"></i> </div>
-                                    <div class="side-menu__title"> Attendance </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-lucide="smile"></i> </div>
-                                    <div class="side-menu__title"> Promotion </div>
-                                </a>
-                            </li>
-
-                              <li>
-                                <a href="simple-menu-light-dashboard-overview-1.html" class="side-menu">
-                                    <div class="side-menu__icon"> <i data-lucide="user-minus"></i> </div>
-                                    <div class="side-menu__title"> Leave </div>
-                                </a>
-                            </li>
-
-                        </ul>
-
                     </li>
 
+                    <li>
+                    <li class="side-nav__devider my-6"></li>
+                    </li>
                      <li>
                         <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                        <a href="Requestmodule" class="side-menu {{session('request')}}">
+                        <a href="{{ route('Requestmodule') }}" class="side-menu {{session('request')}}">
                             <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>
                             <div class="side-menu__title"> Request  </div>
                         </a>
@@ -96,7 +63,7 @@
                         <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                        <a href="Complaintmodule" class="side-menu {{session('complain')}}">
+                        <a href="{{ route('Complaintmodule') }}" class="side-menu {{session('complain')}}">
                             <div class="side-menu__icon"> <i data-lucide="frown"></i> </div>
                             <div class="side-menu__title"> Complain </div>
                         </a>
@@ -107,7 +74,7 @@
                         <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                        <a href="ravemodule" class="side-menu {{session('rave')}}">
+                        <a href="#" class="side-menu {{session('rave')}}">
                             <div class="side-menu__icon"> <i data-lucide="star"></i> </div>
                             <div class="side-menu__title"> Rave  </div>
                         </a>
@@ -118,7 +85,7 @@
                         <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                        <a href="adminsocial" class="side-menu {{session('social')}}">
+                        <a href="{{ route('adminsocial') }}" class="side-menu {{session('social')}}">
                             <div class="side-menu__icon"> <i data-lucide="instagram"></i> </div>
                             <div class="side-menu__title"> Social Group </div>
                         </a>
@@ -130,7 +97,7 @@
                         <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                        <a href="mobileApp" class="side-menu {{session('mobile')}}">
+                        <a href="{{ route('mobileapp.view') }}" class="side-menu {{session('mobile')}}">
                             <div class="side-menu__icon"> <i data-lucide="smartphone"></i> </div>
                             <div class="side-menu__title"> Mobile App </div>
                         </a>
