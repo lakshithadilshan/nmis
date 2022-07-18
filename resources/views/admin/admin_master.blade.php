@@ -31,7 +31,6 @@
 
 
         <!-- BEGIN: Dark Mode Switcher-->
-        @include('admin.body.darkmood')
         <!-- END: Dark Mode Switcher-->
 
         <!-- BEGIN: JS Assets-->

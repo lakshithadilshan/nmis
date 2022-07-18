@@ -631,7 +631,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <a href="javascript:;" class="side-menu {{session('employee')}}">
                     <div class="side-menu__icon"> <i data-lucide="command"></i> </div>
                     <div class="side-menu__title">
-                        Employee Module
+                        Employee
                         <div class="side-menu__sub-icon "> <i data-lucide="chevron-down"></i> </div>
                     </div>
                 </a>
@@ -667,7 +667,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="Requestmodule" class="side-menu {{session('request')}}">
                     <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>
-                    <div class="side-menu__title"> Request Module </div>
+                    <div class="side-menu__title"> Request  </div>
                 </a>
 
             </li>
@@ -678,7 +678,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="Complaintmodule" class="side-menu {{session('complain')}}">
                     <div class="side-menu__icon"> <i data-lucide="frown"></i> </div>
-                    <div class="side-menu__title"> Complaint Module </div>
+                    <div class="side-menu__title"> Complaint  </div>
                 </a>
 
             </li>
@@ -689,7 +689,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="ravemodule" class="side-menu {{session('rave')}}">
                     <div class="side-menu__icon"> <i data-lucide="star"></i> </div>
-                    <div class="side-menu__title"> Rave Module </div>
+                    <div class="side-menu__title"> Rave  </div>
                 </a>
 
             </li>

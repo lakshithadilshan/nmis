@@ -6,6 +6,7 @@ use App\Models\Comment;
 use App\Models\employee;
 use App\Models\post;
 use App\Models\reaction;
+use App\Models\SocialMediaNotification;
 use App\Models\socialmediaprofile;
 use Illuminate\Http\Request;
 use Session;
@@ -49,6 +50,14 @@ class SocialMediaController extends Controller
                 ->select('post_id', DB::raw('count(*) as total'))
                 ->groupBy('post_id')
                 ->get();
+            //load reactors
+            $reactors = DB::table('reactions')->get();
+            //load notofications
+            $notifi = DB::table('social_media_notifications')
+                ->where('to_people','=',session('emp_id'))
+                ->get();
+
+
             //load socialprofile table
             $socpro = DB::table('socialmediaprofiles')
                 ->where('emp_id', '=',session('emp_id') )
@@ -74,7 +83,7 @@ class SocialMediaController extends Controller
             Session::save();
 
 
-            return view('socialmedia',compact('data','employeeall','commentCount','reactCount','comments'));
+            return view('socialmedia',compact('data','employeeall','commentCount','reactCount','comments','reactors','notifi'));
 //        return view('socialmedia','data');
 
 
@@ -134,6 +143,13 @@ class SocialMediaController extends Controller
 //            $affected = DB::table('posts')
 //                ->where('id', $req->postid)
 //                ->update(['comment_count' => $pp,]);
+            $notify = new SocialMediaNotification();
+            $notify->text = 'Commented on your'.' '.$req->post_title .' photo';
+            $notify->pic_people = session('propic');
+            $notify->to_people = $req->to_people;
+            $notify->did_people = session('usernamee');
+
+            $notify->save();
 
 
 

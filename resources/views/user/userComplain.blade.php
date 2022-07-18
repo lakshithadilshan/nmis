@@ -56,7 +56,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="UserRequestmodule" class="side-menu {{session('request')}}">
                     <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>
-                    <div class="side-menu__title"> Request Module </div>
+                    <div class="side-menu__title"> Request  </div>
                 </a>
 
             </li>
@@ -65,9 +65,21 @@ License: You must have a valid license purchased only from themeforest(the above
             <li class="side-nav__devider my-6"></li>
             </li>
             <li>
+                <a href="UserLeavemodule" class="side-menu {{session('leave')}}">
+                    <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>
+                    <div class="side-menu__title"> Leave  </div>
+                </a>
+
+            </li>
+
+
+            <li>
+            <li class="side-nav__devider my-6"></li>
+            </li>
+            <li>
                 <a href="UserComplaintmodule" class="side-menu {{session('complain')}}">
                     <div class="side-menu__icon"> <i data-lucide="frown"></i> </div>
-                    <div class="side-menu__title"> Complaint Module </div>
+                    <div class="side-menu__title"> Complaint  </div>
                 </a>
 
             </li>
@@ -78,7 +90,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="Userravemodule" class="side-menu {{session('rave')}}">
                     <div class="side-menu__icon"> <i data-lucide="star"></i> </div>
-                    <div class="side-menu__title"> Rave Module </div>
+                    <div class="side-menu__title"> Rave  </div>
                 </a>
 
             </li>
@@ -151,7 +163,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <hr class="dropdown-divider border-white/[0.08]">
                         </li>
                         <li>
-                            <a href="" class="dropdown-item hover:bg-white/5"> <i data-lucide="user" class="w-4 h-4 mr-2"></i> Profile </a>
+                            <a href="{{route('systemprofile')}}" class="dropdown-item hover:bg-white/5"> <i data-lucide="user" class="w-4 h-4 mr-2"></i> Profile </a>
                         </li>
 
                         <li>
@@ -174,7 +186,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END: Top Bar -->
         <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
             <h2 class="text-lg font-medium mr-auto">
-                Complain Module
+                Complain
             </h2>
             <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
                 <button class="btn btn-primary shadow-md mr-2">Add New Complain</button>

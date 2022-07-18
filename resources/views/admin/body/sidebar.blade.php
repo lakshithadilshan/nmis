@@ -48,9 +48,20 @@
                     <li>
                     <li class="side-nav__devider my-6"></li>
                     </li>
+                    <li>
+                        <a href="{{ route('adminleavemode') }}" class="side-menu {{session('leave')}}">
+                            <div class="side-menu__icon"> <i data-lucide="command"></i> </div>
+                            <div class="side-menu__title">
+                                Leave
+
+                            </div>
+                        </a>
+
+                    </li>
                      <li>
                         <li class="side-nav__devider my-6"></li>
                     </li>
+
                     <li>
                         <a href="{{ route('Requestmodule') }}" class="side-menu {{session('request')}}">
                             <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>

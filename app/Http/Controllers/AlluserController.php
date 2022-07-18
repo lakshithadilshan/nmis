@@ -58,6 +58,7 @@ class AlluserController extends Controller
                 Session::put('rave', '');
                 Session::put('social','');
                 Session::put('mobile','');
+                Session::put('leave','');
 
 
                 Session::put('usernamee', $username);
@@ -195,11 +196,44 @@ class AlluserController extends Controller
     function dashboard()
     {
         if (session('emp_id')) {
+            Session::put('index', 'side-menu--active');
+            Session::put('manage', '');
+            Session::put('employee','');
+            Session::put('request','');
+            Session::put('complain', '');
+            Session::put('rave', '');
+            Session::put('social','');
+            Session::put('mobile','');
+            Session::save();
             return view('admin.index');
         }
     }
 
+    //show system profile
+    function systemprofile(){
+        if(session('emp_id')){
+            $employees = DB::table('employees')
+                ->where('emp_id','=',session('emp_id'))
+                ->get();
+            $pass = DB::table('allusers')
+                ->where('emp_id','=',session('emp_id'))
+                ->get();
+            foreach ($pass as $p){
+                $xx =($p->password);
+            }
 
+
+            return view('user.userSystemProfile',compact('employees','xx'));
+
+        }else{
+            return back ();
+        }
+    }
+
+    function systemupdateprofile(Request $req){
+        dd($req->add);
+
+    }
 
 
 }

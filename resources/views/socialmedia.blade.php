@@ -56,7 +56,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="UserRequestmodule" class="side-menu {{session('request')}}">
                     <div class="side-menu__icon"> <i data-lucide="phone-outgoing"></i> </div>
-                    <div class="side-menu__title"> Request Module </div>
+                    <div class="side-menu__title"> Request  </div>
                 </a>
 
             </li>
@@ -67,7 +67,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="UserComplaintmodule" class="side-menu {{session('complain')}}">
                     <div class="side-menu__icon"> <i data-lucide="frown"></i> </div>
-                    <div class="side-menu__title"> Complaint Module </div>
+                    <div class="side-menu__title"> Complaint  </div>
                 </a>
 
             </li>
@@ -78,7 +78,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="Userravemodule" class="side-menu {{session('rave')}}">
                     <div class="side-menu__icon"> <i data-lucide="star"></i> </div>
-                    <div class="side-menu__title"> Rave Module </div>
+                    <div class="side-menu__title"> Rave  </div>
                 </a>
 
             </li>
@@ -122,7 +122,7 @@ License: You must have a valid license purchased only from themeforest(the above
             </nav>
             <!-- END: Breadcrumb -->
             <!-- BEGIN: Search -->
-            <div class="intro-x relative mr-3 sm:mr-6">
+            <div class="intro-x relative mr-3 sm:mr-6 hidden">
                 <div class="search hidden sm:block">
                     <input type="text" class="search__input form-control border-transparent" placeholder="Search...">
                     <i data-lucide="search" class="search__icon dark:text-slate-500"></i>
@@ -140,21 +140,23 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="notification-content__box dropdown-content">
                         <div class="notification-content__title">Notifications</div>
                         <div class="overflow-auto p-3 mb-3 mb-md-0 mr-md-3 bg-light" style="max-width: 660px; max-height: 200px;">
+                            @foreach($notifi as $n)
                             <strong>
                                 <div class="cursor-pointer relative flex items-center ">
                                     <div class="w-12 h-12 flex-none image-fit mr-1">
-                                        <img alt="" class="rounded-full" src="dist/images/profile-13.jpg">
+                                        <img alt="" class="rounded-full" src="{{$n->pic_people}}">
                                         <div class="w-3 h-3 bg-success absolute right-0 bottom-0 rounded-full border-2 border-white dark:border-darkmode-600"></div>
                                     </div>
                                     <div class="ml-2 overflow-hidden ">
                                         <div class="flex items-center">
-                                            <a href="javascript:;" class="font-medium truncate mr-5">Leonardo DiCaprio</a>
-                                            <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">05:09 AM</div>
+                                            <a href="javascript:;" class="font-medium truncate mr-5">{{$n->did_people}}</a>
+                                            <div class="text-xs text-slate-400 ml-auto whitespace-nowrap">{{ \Carbon\Carbon::parse($n->created_at)->diffForHumans() }}</div>
                                         </div>
-                                        <div class="w-full truncate text-slate-500 mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
+                                        <div class="w-full truncate text-slate-500 mt-0.5">{{$n->text}}</div>
                                     </div>
                                 </div>
                             </strong>
+                            @endforeach
                             <hr>
                         </div>
                     </div>
@@ -196,24 +198,17 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END: Top Bar -->
         <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
             <h2 class="text-lg font-medium mr-auto">
-                Boo Social Media (User Side)
+                Boo Social Media
             </h2>
             <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
                 <a href="addpost">
-                <button  class="btn btn-primary shadow-md mr-2">Add New Post</button></a>
+                <button  class="btn btn-primary shadow-md mr-2">Create Post</button></a>
                 <div class="dropdown ml-auto sm:ml-0">
                     <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
                         <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="plus"></i> </span>
                     </button>
                     <div class="dropdown-menu w-40">
-                        <ul class="dropdown-content">
-                            <li>
-                                <a href="" class="dropdown-item"> <i data-lucide="share-2" class="w-4 h-4 mr-2"></i> Share Post </a>
-                            </li>
-                            <li>
-                                <a href="" class="dropdown-item"> <i data-lucide="download" class="w-4 h-4 mr-2"></i> Download Post </a>
-                            </li>
-                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -234,7 +229,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             @foreach($employeeall as $emp)
                                 @if($emp->emp_id == $post->emp_id)
 
-                                    <img alt="Midone - HTML Admin Template" class="rounded-full" src="{{$emp->emp_pic}}">
+                                    <img alt="" class="rounded-full" src="{{$emp->emp_pic}}">
 
                                 @endif
                             @endforeach
@@ -277,19 +272,20 @@ License: You must have a valid license purchased only from themeforest(the above
                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                     </svg>
                     <div class="intro-x flex mr-2">
-                        <div class="intro-x w-8 h-8 image-fit">
-                            <img alt="Midone - HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="dist/images/profile-8.jpg" title="Brad Pitt">
-                        </div>
-                        <div class="intro-x w-8 h-8 image-fit -ml-4">
-                            <img alt="Midone - HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="dist/images/profile-14.jpg" title="Hugh Jackman">
-                        </div>
-                        <div class="intro-x w-8 h-8 image-fit -ml-4">
-                            <img alt="Midone - HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="dist/images/profile-2.jpg" title="Keira Knightley">
-                        </div>
+
+{{--                        <div class="intro-x w-8 h-8 image-fit">--}}
+{{--                            <img alt="xx" class="rounded-full border border-white zoom-in tooltip" src="/a.jpeg" title="">--}}
+{{--                        </div>--}}
+{{--                        <div class="intro-x w-8 h-8 image-fit">--}}
+{{--                            <img alt="xx" class="rounded-full border border-white zoom-in tooltip" src="/a.jpeg" title="">--}}
+{{--                        </div>--}}
+{{--                        <div class="intro-x w-8 h-8 image-fit">--}}
+{{--                            <img alt="xx" class="rounded-full border border-white zoom-in tooltip" src="/a.jpeg" title="">--}}
+{{--                        </div>--}}
+
+
                     </div>
-                    <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full text-primary bg-primary/10 dark:bg-darkmode-300 dark:text-slate-300 ml-auto tooltip" title="Share"> <i data-lucide="share-2" class="w-3 h-3"></i> </a>
-                    <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white ml-2 tooltip" title="Download PDF"> <i data-lucide="share" class="w-3 h-3"></i> </a>
-                </div>
+                     </div>
                 <div class="px-5 pt-3 pb-5 border-t border-slate-200/60 dark:border-darkmode-400">
                     <div class="w-full flex text-slate-500 text-xs sm:text-sm">
 
@@ -317,6 +313,9 @@ License: You must have a valid license purchased only from themeforest(the above
                             <input type="text" class="form-control form-control-rounded border-transparent bg-slate-100 pr-10" name="text" placeholder="Post a comment...">
                             <i data-lucide="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
                                 <input type="hidden" name="post_id" value="{{$post->id}}">
+                                <input type="hidden" name="post_title" value="{{$post->title}}">
+                                <input type="hidden" name="to_people" value="{{$post->emp_id}}">
+
                                 <input type="submit" style="display:none"/>
                             </form>
                         </div>
