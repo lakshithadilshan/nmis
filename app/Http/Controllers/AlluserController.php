@@ -58,6 +58,7 @@ class AlluserController extends Controller
                 Session::put('rave', '');
                 Session::put('social','');
                 Session::put('mobile','');
+                Session::put('personal','');
                 Session::put('leave','');
 
 
@@ -212,6 +213,15 @@ class AlluserController extends Controller
     //show system profile
     function systemprofile(){
         if(session('emp_id')){
+            Session::put('index', '');
+            Session::put('manage', '');
+            Session::put('employee','');
+            Session::put('request','');
+            Session::put('complain', '');
+            Session::put('rave', '');
+            Session::put('social','');
+            Session::put('mobile','');
+            Session::save();
             $employees = DB::table('employees')
                 ->where('emp_id','=',session('emp_id'))
                 ->get();

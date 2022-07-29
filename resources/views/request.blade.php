@@ -12,8 +12,8 @@
                     <!-- BEGIN: Breadcrumb -->
                     <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Application</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Request</li>
+                            <li class="breadcrumb-item"><a href="{{route('Requestmodule')}}">Request</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Transport</li>
                         </ol>
                     </nav>
                     <!-- END: Breadcrumb -->
@@ -71,7 +71,7 @@
 
                 <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
                     <h2 class="text-lg font-medium mr-auto">
-                       Request List
+                        Transport Request List
                     </h2>
                     <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
                         <!-- <button class="btn btn-primary shadow-md mr-2">Add New User</button> -->
@@ -135,7 +135,6 @@
                                         <thead>
                                             <tr>
                                                 <th class="whitespace-nowrap">Request ID</th>
-                                                <th class="text-center whitespace-nowrap">Request Type</th>
                                                 <th class="whitespace-nowrap">Description</th>
                                                 <th class="text-center whitespace-nowrap">Priority</th>
                                                 <th class="text-center whitespace-nowrap">Status</th>
@@ -147,21 +146,18 @@
                                         <tbody>
                                             @foreach ($data as $req )
 
-
-                                            <tr class="intro-x">
+                                            <tr class="intro-x" >
                                                 <td class="w-40">
                                                     <div class="flex">
                                                         <div class="w-10 h-10 image-fit zoom-in">
-                                                        {{$req->request_id}}
+                                                        {{$req->id}}
                                                         </div>
 
                                                     </div>
                                                 </td>
-                                                <td>
-                                                    <a href="" class="font-medium whitespace-nowrap">{{$req->req_type}}</a>
-                                                </td>
 
-                                                <td class="text-center">{{$req->description}}</td>
+
+                                                <td class="text">{{$req->description}}</td>
 
                                                 @if ($req->priority == "High"){
                                                     <td class="w-40">
@@ -184,12 +180,14 @@
                                                     </td>
 
                                                 <td class="table-report__action w-56">
-                                                    <div class="flex justify-center items-center">
-                                                        <a class="flex items-center mr-3" href="{{ url('approverequest/' . $req->request_id) }}"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Approve </a>
-                                                        <a class="flex items-center text-danger" href="{{ url('rejectrequest/' . $req->request_id) }}"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Reject </a>
+                                                    <div class="flex justify-center items-center" >
+                                                        <a href="{{ url('adminRequestMoreBTN/' . $req->id.'/'.$req->emp_id) }}"> <input type="button" value="More" class="btn btn-primary w-full sm:w-16"></a>
+                                                        <a class="flex items-center mr-3" href="{{ url('approverequest/' . $req->id) }}"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="check-square" data-lucide="check-square" class="lucide lucide-check-square w-4 h-4 mr-1"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg> Approve </a>
+                                                        <a class="flex items-center text-danger" href="{{ url('rejectrequest/' . $req->id) }}"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" icon-name="trash-2" data-lucide="trash-2" class="lucide lucide-trash-2 w-4 h-4 mr-1"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> Reject </a>
                                                     </div>
                                                 </td>
                                             </tr>
+
                                             @endforeach
                                         </tbody>
                                     </table>

@@ -23,6 +23,7 @@ Route::middleware([
 Route::get('/dashbord', function () {
     return view('admin.index');
 });
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -34,7 +35,6 @@ Route::get('checkaccountcreate',[AlluserController::class,'checkaccountcreate'])
 Route::get('/',[AlluserController::class,'loginform'])->name('/');
 Route::POST('/loginclick',[AlluserController::class,'login'])->name('loginclick');
 Route::get('logout',[AlluserController::class,'logout'])->name('admin.logout');
-Route::get('/Requestmodule',[RequestModuleController::class,'show'])->name('Requestmodule');
 Route::get('approverequest/{id}', [\App\Http\Controllers\RequestModuleController::class, 'approverequest'])->name('approverequest');
 Route::get('rejectrequest/{id}', [\App\Http\Controllers\RequestModuleController::class, 'rejectrequest'])->name('rejectrequest');
 
@@ -76,6 +76,33 @@ Route::get('rejecthalfleave/{id}/{empid}',[\App\Http\Controllers\AdminLeaveContr
 Route::get('/adminmedicalleave',[\App\Http\Controllers\AdminLeaveController::class,'adminmedicalleave'])->name('adminmedicalleave');
 Route::get('approvemedicalleave/{id}',[\App\Http\Controllers\AdminLeaveController::class,'approvemedicalleave'])->name('approvemedicalleave');
 Route::get('rejectmedicalleave/{id}/{empid}',[\App\Http\Controllers\AdminLeaveController::class,'rejectmedicalleave'])->name('rejectmedicalleave');
+//--------------------------personal file handling--------------------------------------------------------
+Route::get('/personalfilee',[\App\Http\Controllers\PersonalFileController::class,'personalfilee'])->name('personalfilee');
+Route::get('/pfappoiment',[\App\Http\Controllers\PersonalFileController::class,'pfappoiment'])->name('pfappoiment');
+Route::get('/pfpromotion',[\App\Http\Controllers\PersonalFileController::class,'pfpromotion'])->name('pfpromotion');
+Route::get('/pfincrements',[\App\Http\Controllers\PersonalFileController::class,'pfincrements'])->name('pfincrements');
+Route::get('/pfPoliceReport',[\App\Http\Controllers\PersonalFileController::class,'pfPoliceReport'])->name('pfPoliceReport');
+Route::get('/pfSecretReport',[\App\Http\Controllers\PersonalFileController::class,'pfSecretReport'])->name('pfSecretReport');
+Route::get('/pfConfidential',[\App\Http\Controllers\PersonalFileController::class,'pfConfidential'])->name('pfConfidential');
+Route::get('/pfDutyAssumeLetter',[\App\Http\Controllers\PersonalFileController::class,'pfDutyAssumeLetter'])->name('pfDutyAssumeLetter');
+Route::get('/pfOther',[\App\Http\Controllers\PersonalFileController::class,'pfOther'])->name('pfOther');
+Route::get('/deletePDF/{id}',[\App\Http\Controllers\PersonalFileController::class,'deletePDF'])->name('deletePDF');
+Route::post('/uploadpersonalfile',[\App\Http\Controllers\PersonalFileController::class,'uploadpersonalfile'])->name('uploadpersonalfile');
+Route::get('selectemployeedetail/{id}',[\App\Http\Controllers\PersonalFileController::class,'selectemployeedetail'])->name('selectemployeedetail');
+Route::get('/readPDFs/{f}',[\App\Http\Controllers\PersonalFileController::class,'readPDFs'])->name('readPDFs');
+Route::get('/downloadPDFs/{f}',[\App\Http\Controllers\PersonalFileController::class,'downloadPDFs'])->name('downloadPDFs');
+//---------------------------request-----------------------------------------------------
+Route::get('/Requestmodule',[RequestModuleController::class,'show'])->name('Requestmodule');
+Route::get('/admintransportrequest',[RequestModuleController::class,'admintransportrequest'])->name('admintransportrequest');
+Route::get('/adminRequestMoreBTN/{id}/{emp_id}',[RequestModuleController::class,'adminRequestMoreBTN'])->name('adminRequestMoreBTN');
+//-----------request chat------------------------------------------------
+Route::post('/requestChat',[RequestModuleController::class,'requestChat'])->name('requestChat');
+Route::get('/adminreqeustfurniture',[RequestModuleController::class,'adminreqeustfurniture'])->name('adminreqeustfurniture');
+Route::get('/adminrequesttransfer',[RequestModuleController::class,'adminrequesttransfer'])->name('adminrequesttransfer');
+Route::get('/adminrequestinsurance',[RequestModuleController::class,'adminrequestinsurance'])->name('adminrequestinsurance');
+Route::get('/adminrequestpromotion',[RequestModuleController::class,'adminrequestpromotion'])->name('adminrequestpromotion');
+Route::get('/adminrequestincrements',[RequestModuleController::class,'adminrequestincrements'])->name('adminrequestincrements');
+Route::get('/adminrequestother',[RequestModuleController::class,'adminrequestother'])->name('adminrequestother');
 
 
 
@@ -115,6 +142,15 @@ Route::get('userhalfdayleave', [\App\Http\Controllers\LeaveController::class, 'u
 Route::post('storehalfdayLeave', [\App\Http\Controllers\LeaveController::class, 'storehalfdayLeave'])->name('storehalfdayLeave');
 Route::get('cancelhalfdayleave/{id}', [\App\Http\Controllers\LeaveController::class, 'cancelhalfdayleave'])->name('cancelhalfdayleave');
 Route::post('edithalfdayleave', [\App\Http\Controllers\LeaveController::class, 'edithalfdayleave'])->name('edithalfdayleave');
+//-------------------------------------request--------------------------------------------------------------------
+Route::get('usertransportrequest', [\App\Http\Controllers\UserRequestController::class, 'usertransportrequest'])->name('usertransportrequest');
+Route::post('storeTransportRequest', [\App\Http\Controllers\UserRequestController::class, 'storeTransportRequest'])->name('storeTransportRequest');
+Route::get('userrequestfurniture', [\App\Http\Controllers\UserRequestController::class, 'userrequestfurniture'])->name('userrequestfurniture');
+Route::get('userrequesttransfer', [\App\Http\Controllers\UserRequestController::class, 'userrequesttransfer'])->name('userrequesttransfer');
+Route::get('userrequestinsurance', [\App\Http\Controllers\UserRequestController::class, 'userrequestinsurance'])->name('userrequestinsurance');
+Route::get('userrequestpromotion', [\App\Http\Controllers\UserRequestController::class, 'userrequestpromotion'])->name('userrequestpromotion');
+Route::get('userrequestincrements', [\App\Http\Controllers\UserRequestController::class, 'userrequestincrements'])->name('userrequestincrements');
+Route::get('userrequestother', [\App\Http\Controllers\UserRequestController::class, 'userrequestother'])->name('userrequestother');
 
 
 

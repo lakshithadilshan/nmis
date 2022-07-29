@@ -92,6 +92,16 @@
 
                     </li>
 
+                    <li>
+                    <li class="side-nav__devider my-6"></li>
+                    </li>
+                    <li>
+                        <a href="{{ route('personalfilee') }}" class="side-menu {{session('personal')}}">
+                            <div class="side-menu__icon"> <i data-lucide="star"></i> </div>
+                            <div class="side-menu__title"> Personal File  </div>
+                        </a>
+                    </li>
+
                       <li>
                         <li class="side-nav__devider my-6"></li>
                     </li>
@@ -108,7 +118,7 @@
                         <li class="side-nav__devider my-6"></li>
                     </li>
                     <li>
-                        <a href="{{ route('mobileapp.view') }}" class="side-menu {{session('mobile')}}">
+                        <a href="" class="side-menu {{session('mobile')}}">
                             <div class="side-menu__icon"> <i data-lucide="smartphone"></i> </div>
                             <div class="side-menu__title"> Mobile App </div>
                         </a>

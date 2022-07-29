@@ -79,7 +79,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <li>
                 <a href="UserComplaintmodule" class="side-menu {{session('complain')}}">
                     <div class="side-menu__icon"> <i data-lucide="frown"></i> </div>
-                    <div class="side-menu__title"> Complaint  </div>
+                    <div class="side-menu__title"> Raise & Issue  </div>
                 </a>
 
             </li>

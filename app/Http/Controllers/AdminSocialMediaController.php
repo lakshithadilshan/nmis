@@ -81,7 +81,13 @@ class AdminSocialMediaController extends Controller
     }
 //--------------------delete---------------------------------------------------------------
     function deletepost($postid){
-        post::where('id', '=', $postid)->delete();
+        if (session('emp_id')){
+            post::where('id', '=', $postid)->delete();
+            Comment::where('post_id', '=', $postid)->delete();
+
+            return back();
+        }
+
         return back();
 
     }

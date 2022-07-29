@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Comment;
 use App\Models\employee;
 use App\Models\post;
@@ -11,6 +10,8 @@ use App\Models\socialmediaprofile;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 
 
@@ -150,9 +151,10 @@ class SocialMediaController extends Controller
             $notify->did_people = session('usernamee');
 
             $notify->save();
-
-
-
+            $justnowtime = Carbon::now();
+            $affected = DB::table('posts')
+                ->where('id', $req->post_id)
+                ->update(['updated_at'=> $justnowtime]);
 
             return back();
 
@@ -205,10 +207,10 @@ class SocialMediaController extends Controller
             $pic = $image;
             $req->picture->move(public_path('/'), $image);
 
-
+            $justnowtime = Carbon::now();
             $affected = DB::table('posts')
                 ->where('id', $postid)
-                ->update(['title' => $title, 'location' => $location, 'description' => $description, 'picture' => $pic]);
+                ->update(['title' => $title, 'location' => $location, 'description' => $description, 'picture' => $pic,'updated_at'=> $justnowtime]);
             return Redirect()->route('social');
         }else{
             return back();

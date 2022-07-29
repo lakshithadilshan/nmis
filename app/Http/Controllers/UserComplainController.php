@@ -14,9 +14,10 @@ class UserComplainController extends Controller
         Session::put('manage', '');
         Session::put('employee','');
         Session::put('request','');
-        Session::put('complain', 'side-menu--active');
+        Session::put('complain','side-menu--active');
         Session::put('rave', '');
         Session::put('social','');
+        Session::put('leave','');
         Session::put('mobile','');
         Session::save();
         $data = DB::table('complains')
