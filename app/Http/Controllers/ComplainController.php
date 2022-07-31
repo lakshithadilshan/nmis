@@ -17,6 +17,7 @@ class ComplainController extends Controller
          Session::put('request','');
          Session::put('complain', 'side-menu--active');
          Session::put('rave', '');
+         Session::put('personal','');
          Session::put('social','');
          Session::put('mobile','');
          $data=Complain::orderBy("created_at","desc")->get();

@@ -29,6 +29,13 @@ class AlluserController extends Controller
             ->where('emp_id', '=', $emp_id)
             ->get();
         $dp = $propic[0]->emp_pic;
+        //employee
+        $employeeemail = DB::table('employees')
+            ->select('email')
+            ->where('emp_id', '=', $emp_id)
+            ->get();
+        $emp_email = $employeeemail[0]->email;
+
 
 
         if (empty($emp_id) || empty($pass) || $pass < 8) {
@@ -66,6 +73,8 @@ class AlluserController extends Controller
                 Session::put('emp_id', $emp_id);
                 Session::put('usertype', $usertype);
                 Session::put('propic', $dp);
+                Session::put('user_email', $emp_email);
+                Session::put('user_id', $emp_id);
                 Session::save();
                 return view('admin.index');
 
@@ -241,9 +250,69 @@ class AlluserController extends Controller
     }
 
     function systemupdateprofile(Request $req){
-        dd($req->add);
+        if (session('emp_id')){
+            $image = time() . "." . $req->picture->extension();
+            $req->picture->move(public_path('/'), $image);
+
+            $affected = DB::table('employees')
+                ->where('emp_id', session('emp_id'))
+                ->update([
+                    'current_postal_address' => $req->caddress,
+                    'permanent_postal_address' => $req->paddress,
+                    'current_mobile' => $req->cmobile,
+                    'permanent_mobile' => $req->pmobile,
+                    'emp_pic' => $image,
+                ],
+                );
+            Session::put('propic',$image);
+            Session::save();
+            return back();
+        }else{
+            return back();
+        }
 
     }
+    function adminsystemprofile(){
+        if (session('emp_id')){
+            $employees = DB::table('employees')
+                ->where('emp_id','=',session('emp_id'))
+                ->get();
+            $pass = DB::table('allusers')
+                ->where('emp_id','=',session('emp_id'))
+                ->get();
+            foreach ($pass as $p){
+                $xx =($p->password);
+            }
+            return view('admin.adminSystemProfile',compact('employees','xx'));
+        }else{
+            return back();
+        }
+    }
+
+    function adminsystemupdateprofile(Request $req){
+        if (session('emp_id')){
+            $image = time() . "." . $req->picture->extension();
+            $req->picture->move(public_path('/'), $image);
+
+            $affected = DB::table('employees')
+                ->where('emp_id', session('emp_id'))
+                ->update([
+                    'current_postal_address' => $req->caddress,
+                    'permanent_postal_address' => $req->paddress,
+                    'current_mobile' => $req->cmobile,
+                    'permanent_mobile' => $req->pmobile,
+                    'emp_pic' => $image,
+                ],
+                );
+            Session::put('propic',$image);
+            Session::save();
+            return back();
+        }else{
+            return back();
+        }
+
+    }
+
 
 
 }

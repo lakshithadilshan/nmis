@@ -7,6 +7,17 @@ use App\Http\Controllers\RequestModuleController;
 use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\LeaveTypeController;
+use App\Http\Controllers\SelfNotificationController;
+use App\Http\Controllers\AppliciantController;
+use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\AdministrativeNotificationController;
+use App\Http\Controllers\AppliciantTestController;
+use App\Http\Controllers\AppliciantExamController;
+use App\Http\Controllers\AppliciantExamUserController;
+use App\Http\Controllers\RecruitmentSeasonController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\RaveController;
+use App\Http\Controllers\Backend\EmployeeModuleController;
 
 
 Route::middleware([
@@ -37,6 +48,8 @@ Route::POST('/loginclick',[AlluserController::class,'login'])->name('loginclick'
 Route::get('logout',[AlluserController::class,'logout'])->name('admin.logout');
 Route::get('approverequest/{id}', [\App\Http\Controllers\RequestModuleController::class, 'approverequest'])->name('approverequest');
 Route::get('rejectrequest/{id}', [\App\Http\Controllers\RequestModuleController::class, 'rejectrequest'])->name('rejectrequest');
+Route::get('adminsystemprofile',[AlluserController::class,'adminsystemprofile'])->name('adminsystemprofile');
+Route::post('adminsystemupdateprofile',[AlluserController::class,'adminsystemupdateprofile'])->name('adminsystemupdateprofile');
 
 Route::get('/Complaintmodule',[\App\Http\Controllers\ComplainController::class,'show'])->name('Complaintmodule');
 Route::get('/social',[\App\Http\Controllers\SocialMediaController::class,'begin'])->name('social');
@@ -120,6 +133,7 @@ Route::get('storereact/{post}', [\App\Http\Controllers\SocialMediaController::cl
 Route::get('socialmediaprofile', [\App\Http\Controllers\SocialMediaController::class, 'socialmediaprofile'])->name('socialmediaprofile');
 Route::get('systemprofile', [\App\Http\Controllers\AlluserController::class, 'systemprofile'])->name('systemprofile');
 Route::post('systemupdateprofile', [\App\Http\Controllers\AlluserController::class, 'systemupdateprofile'])->name('systemupdateprofile');
+
 //----------------------------------------leave--------------------------------------------------------
 Route::get('UserLeavemodule', [\App\Http\Controllers\LeaveController::class, 'UserLeavemodule'])->name('UserLeavemodule');
 //----------------------------------------short leave--------------------------------------------------------
@@ -185,7 +199,6 @@ Route::get('/UsermobileApp',[AlluserController::class,'mobileapp'])->name('mobil
 Route::get('employee/module',[AlluserController::class, 'EmployeeModule'])->name('employeeModule.view');
 Route::get('/dashboard',[AlluserController::class,'dashboard'])->name('dashboard');
 
-
 // Users All Routes
 Route::prefix('users')->group(function (){
 
@@ -200,6 +213,9 @@ Route::prefix('users')->group(function (){
 });
 
 //Employee Attendance All Routes
+
+
+
 Route::prefix('employees')->group(function(){
 
 
@@ -207,7 +223,7 @@ Route::prefix('employees')->group(function(){
 
     Route::get('attendance/employee/add',[AttendanceController::class, 'AttendanceAdd'])->name('employee.attendance.add');
 
-    Route::post('attendance/employee/store',[AttendanceController::class, 'AttendanceStore'])->name('employee.attendance.store');
+    Route::get('attendance/employee/store',[AttendanceController::class, 'AttendanceStore'])->name('attendance.store');
 
     Route::get('attendance/employee/edit/{date}',[AttendanceController::class, 'AttendanceEdit'])->name('employee.attendance.edit');
 
@@ -217,7 +233,28 @@ Route::prefix('employees')->group(function(){
 
     Route::get('/attendance/drop',[AttendanceController::class, 'drop'])->name('drop');
 
+    Route::post('/attendance/csv',[AttendanceController::class, 'csv'])->name('add_csv');
+
+    Route::get('/attendance/exportpdf',[AttendanceController::class, 'PdfExport'])->name('exportpdf.attendance');
+
+    Route::get('/attendance/exportcsv',[AttendanceController::class, 'CsvExport'])->name('exportcsv.attendance');
+
+    Route::get('/attendance/months',[AttendanceController::class, 'AttendanceMonths'])->name('attendancemonth');
+
+    Route::get('/attendance/add',[AttendanceController::class, 'AttendancAdd'])->name('attendance.add');
+
+
+
+
 });
+
+
+Route::get('employee/module',[EmployeeModuleController::class, 'EmployeeModule'])->name('employeeModule.view');
+
+Route::get('rave/view',[RaveController::class, 'rave'])->name('rave.view');
+
+Route::get('usereditt/{id}', [UserController::class, 'UserEdit'])->name('usereditt');
+Route::post('userseditsave',[UserController::class, 'userseditsave'])->name('userseditsave');
 
 //Employee Leaves All Routes
 Route::prefix('leaves')->group(function(){
@@ -227,6 +264,206 @@ Route::prefix('leaves')->group(function(){
 
 });
 
+//----------------------------------------from mudeesha----------------------------------------------------------------------------------------------------
+//notification test
+Route::get('/self-notification',[SelfNotificationController::class,'getSelfNotifications'])->name('admin.logout');
 
+
+Route::view("/test-notification","admin/test_notification");
+Route::POST('/test-notification',[AppliciantController::class,'testNotification']);
+
+Route::view('/mylogin','user.login');
+Route::POST('/mylogin',[App\Http\Controllers\UserController::class,'mylogin']);
+
+Route::get('/user-dashbord',[UserController::class,'dashbord']);
+
+Route::view('/admin-notification-setup','admin.admin_notification');
+Route::view('/admin-form','admin.form');
+
+//send notification
+Route::view('/send-notification','admin.notification.admin_notification');
+Route::get('/send-notification',[AdministrativeNotificationController::class,'dataForAdminNotifications']);
+
+//fetch administer notification
+Route::get('fetch-admin-notification',[AdministrativeNotificationController::class, 'fetcAdminNotifications']);
+
+//store notification
+Route::POST('store-admin-notification',[AdministrativeNotificationController::class, 'storeAdminNotifications']);
+
+//test
+Route::get('testt',[AdministrativeNotificationController::class, 'sendAdminActiveNotifications']);
+
+
+
+
+//Admin
+Route::prefix('admin')->group(function(){
+    Route::get('recruitment/dashbord',[AdminController::class,'returnDashbord'])->name('admin_dashbord');
+
+    Route::get('recruitment/appliciants',[AdminController::class,'appliciant'])->name('admin_appliciant');
+
+    Route::get('recruitment/exam',[AdminController::class,'appliciantExam'])->name('admin_appliciant_exam');
+
+    Route::get('recruitment/exam-adjustment',[AdminController::class,'ExamAdjustment'])->name('admin_appliciant_exam_adjustment');
+
+    Route::POST('/test',[App\Http\Controllers\AdminController::class,'test']);
+
+    //Admin recruiment
+    //Designation
+    //fecth designation
+    Route::get('recruitment/fetch-designation',[DesignationController::class, 'fetcDesignation']);
+    //delete notification
+    Route::delete('recruitment/delete-designation/{id}',[DesignationController::class, 'deleteDesignation']);
+    //edit designation
+    Route::get('recruitment/edit-designation/{id}',[DesignationController::class, 'editDesignation']);
+    //update designation
+    Route::put('recruitment/update-designation/{id}',[DesignationController::class, 'updateDesignation']);
+    //add designation
+    Route::POST('recruitment/add-designation',[DesignationController::class, 'AddDesignation']);
+    //view qualification
+    Route::get('recruitment/view-qualification/{id}',[DesignationController::class, 'viewQualification']);
+    //view details
+    Route::get('recruitment/view-details/{id}',[DesignationController::class, 'viewdetails']);
+    //End designation
+
+    //Season
+    // //fecth designation
+    Route::get('recruitment/fetch-season',[RecruitmentSeasonController::class, 'fetchSeason']);
+    // //delete notification
+    Route::delete('recruitment/delete-season/{id}',[RecruitmentSeasonController::class, 'deleteSeason']);
+    // //edit designation
+    Route::get('recruitment/edit-season/{id}',[RecruitmentSeasonController::class, 'editSeason']);
+    // //update designation
+    Route::put('recruitment/update-season/{id}',[RecruitmentSeasonController::class, 'updateSeason']);
+    // //add designation
+    Route::POST('recruitment/add-season',[RecruitmentSeasonController::class, 'AddSeason']);
+    // //select designation
+    Route::POST('recruitment/select-season',[RecruitmentSeasonController::class, 'SelectSeason']);
+    //End Season
+
+    //Appliciant
+    //fecth designation
+    Route::get('recruitment/fetch-appliciant',[AppliciantController::class, 'fetcAppliciant']);
+    //delete notification
+    //Route::delete('recruitment/delete-appliciant/{id}',[AppliciantController::class, 'deleteAppliciant']);
+    //view details
+    Route::get('recruitment/view-appliciant/{id}',[AppliciantController::class, 'viewAppliciant']);
+    //Reject Appliciant
+    Route::put('recruitment/reject_appliciant/{id}',[AppliciantController::class, 'rejectAppliciant']);
+    //Reject Appliciant
+    Route::put('recruitment/approve_appliciant/{id}',[AppliciantController::class, 'approveAppliciant']);
+    //End designation
+
+    //Appliciant-test
+    //fecth Appliciant-test
+    Route::get('recruitment/fetch-appliciant_test',[AppliciantTestController::class, 'fetcAppliciantTest']);
+    //delete Appliciant-test
+    Route::delete('recruitment/delete-appliciant_test/{id}',[AppliciantTestController::class, 'deleteAppliciantTest']);
+    //edit Appliciant-test
+    Route::get('recruitment/edit-appliciant_test/{id}',[AppliciantTestController::class, 'editAppliciantTest']);
+    //update Appliciant-test
+    Route::put('recruitment/update-appliciant_test/{id}',[AppliciantTestController::class, 'updateAppliciantTest']);
+    //add Appliciant-test
+    Route::POST('recruitment/add-appliciant_test',[AppliciantTestController::class, 'AddAppliciantTest']);
+    //End Appliciant-test
+
+    //Appliciant-exam schedule
+    //fecth Appliciant exam schedule
+    Route::get('recruitment/fetch-exam-schedule',[AppliciantExamController::class, 'fetchExamSchedule']);
+    //delete Appliciant-exam schedule
+    Route::delete('recruitment/delete-exam-schedule/{id}',[AppliciantExamController::class, 'deleteExamSchedule']);
+    //edit Appliciant-exam schedule
+    Route::get('recruitment/edit-exam-schedule/{id}',[AppliciantExamController::class, 'editExamSchedule']);
+    //update Appliciant-exam schedule
+    Route::put('recruitment/update-exam-schedule/{id}',[AppliciantExamController::class, 'updateExamSchedule']);
+    //add Appliciant-exam schedule
+    Route::POST('recruitment/add-exam-schedule',[AppliciantExamController::class, 'AddExamSchedule']);
+    //add Appliciant-exam marks
+    Route::POST('recruitment/autofill-exam-schedule',[AppliciantExamController::class, 'AutoFillExamSchedule']);
+    //End Appliciant-exam schedule
+
+    //Appliciant-exam marks
+    //fecth Appliciant exam marks
+    Route::get('recruitment/fetch-exam-marks',[AppliciantExamUserController::class, 'fetchExamMarks']);
+    //delete Appliciant-exam marks
+    Route::delete('recruitment/delete-exam-marks/{id}',[AppliciantExamUserController::class, 'deleteExamMarks']);
+    //edit Appliciant-exam marks
+    Route::get('recruitment/edit-exam-marks/{id}',[AppliciantExamUserController::class, 'editExamMarks']);
+    //update Appliciant-exam marks
+    Route::put('recruitment/update-exam-marks/{id}',[AppliciantExamUserController::class, 'updateExamMarks']);
+    //add Appliciant-exam marks
+    Route::POST('recruitment/add-exam-marks',[AppliciantExamUserController::class, 'AddExamMarks']);
+    //add Appliciant-exam marks
+    Route::POST('recruitment/autofill-exam-marks',[AppliciantExamUserController::class, 'AutoFillExamMarks']);
+    //End Appliciant-exam marks
+
+    //Start exam mark filter
+    //fecth Appliciant exam marks
+    Route::get('recruitment/fetch-exam-mark-filter',[AppliciantExamUserController::class, 'fetchExamMarkFilter']);
+    //define cutoff marks
+    Route::post('recruitment/define-cutoff',[AppliciantExamUserController::class, 'defineCutoff']);
+    //define count
+    Route::post('recruitment/define-count',[AppliciantExamUserController::class, 'defineCount']);
+    //End exam mark filter
+
+
+    //End Appliciant-test
+
+
+});
+Route::delete('delete-notification/{id}',[AdminController::class, 'deleteNotification']);
+Route::get('edit-notification/{id}',[AdminController::class, 'editNotification']);
+Route::put('update-notification/{id}',[AdminController::class, 'updateNotification']);
+Route::get('view-notification/{id}',[AdminController::class, 'viewNotification']);
+
+
+
+//Appliciants AppliciantController
+Route::prefix('appliciant')->group(function(){
+
+//Dashbord
+    Route::get('/dashbord',[AppliciantController::class,'returnDashbord'])->name('temp_user_dashbord');
+
+    Route::POST('/application',[AppliciantController::class,'returnApplication'])->name('appliciant.application');
+
+//submit application
+    Route::POST('/submit-application',[AppliciantController::class,'submitApplication']);
+
+//view own details
+    Route::get('/view-own',[AppliciantController::class, 'viewOwnDetails']);
+
+//view own details
+    Route::get('/edit_details',[AppliciantController::class, 'loadEditDetails']);
+
+//update application
+    Route::POST('/update-application',[AppliciantController::class,'updateApplication']);
+
+
+});
+
+
+
+
+
+Route::view('/formset','admin.form');
+
+
+
+
+
+
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::prefix('applicant')->group(function(){
+    Route::get('/dashboard',[AppliciantController::class,'returnDashboard']);
+});
+
+Route::get('testt',[DesignationController::class, 'test']);
+
+Route::get('add-employee',[EmployeeController::class, 'addEmployee']);
 
 

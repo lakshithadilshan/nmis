@@ -16,6 +16,7 @@ class UserComplainController extends Controller
         Session::put('request','');
         Session::put('complain','side-menu--active');
         Session::put('rave', '');
+        Session::put('personal','');
         Session::put('social','');
         Session::put('leave','');
         Session::put('mobile','');
